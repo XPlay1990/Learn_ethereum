@@ -1,8 +1,8 @@
-import path from 'path'
-import fs from 'fs'
-import solc from 'solc'
+const path = require('path')
+const fs = require('fs')
+const solc = require('solc')
 
-export const contract = JSON.parse(solc.compile(solcConfiguration())).contracts["Inbox.sol"].Inbox
+module.exports = JSON.parse(solc.compile(solcConfiguration())).contracts["Inbox.sol"].Inbox
 
 function solcConfiguration() {
     const contractPath = path.resolve("contracts", "Inbox.sol")
