@@ -1,6 +1,6 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider")
 const Web3 = require("web3")
-const {abi, evm} = require("./compile")
+const {abi, evm} = require("./compile_Lottery")
 const {secretPhrase, infuraLink} = require("./secretConfig");
 
 const provider = new HDWalletProvider(
@@ -23,6 +23,7 @@ const deploy = async () => {
         .send({from: accounts[0], gas: "5000000"})
 
     console.log("Contract deployed to", result.options.address)
+    console.log("ABI:", abi)
 }
 
 deploy()
